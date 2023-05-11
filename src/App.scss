@@ -1,0 +1,353 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#header {
+  background: black;
+  padding: 20px 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+
+        &:hover {
+          color: #40AB7E;
+        }
+      }
+    }
+
+    &-buttons {
+      display: flex;
+    }
+
+    .search-movies {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        padding: 3px 1px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background: white;
+        text-align: center;
+      }
+
+      button {
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 40px;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        background: linear-gradient(90deg, yellow, orange, coral, crimson, red, violet, purple, fuchsia, yellow);
+        background-size: 500%;
+        border-radius: 30px;
+
+        &:hover {
+          animation: animate 8s linear infinite;
+        }
+
+        &:before {
+          background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+          background-size: 400%;
+          border-radius: 40px;
+          opacity: 0;
+          transition: .2s;
+        }
+
+        &:hover:before {
+          filter: blur(20px);
+          opacity: 1;
+          animation: animate 8s linear infinite;
+        }
+      }
+    }
+
+  }
+}
+
+#movies {
+  padding: 50px 0;
+
+  .container {
+    .movies {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &-card {
+        margin: 20px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid black;
+        height: 430px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 30px;
+        padding: 8px 15px;
+        box-shadow: 3px 3px 19px black;
+        transition: .7s;
+
+        &:hover {
+          box-shadow: 11px 10px 16px black;
+          transform: translateY(-10px);
+        }
+
+        img {
+          width: 230px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 30px;
+          border-bottom-left-radius: 30px;
+          border-bottom-right-radius: 5px;
+
+        }
+
+        h3 {
+
+        }
+      }
+
+      &-buttons {
+        button {
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+          color: #fff;
+          font-size: 18px;
+          text-decoration: none;
+          background: linear-gradient(90deg, yellow, orange, coral, crimson, red, violet, purple, fuchsia, yellow);
+          background-size: 500%;
+          border-radius: 50%;
+
+          &:hover {
+            animation: animate 8s linear infinite;
+          }
+
+          &:before {
+            background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+            background-size: 400%;
+            border-radius: 40px;
+            opacity: 0;
+          }
+
+          &:hover:before {
+            filter: blur(20px);
+            opacity: 1;
+            animation: animate 8s linear infinite;
+          }
+        }
+      }
+    }
+  }
+}
+
+#detail {
+
+  padding: 50px 0;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 18, 19, 0.66);
+
+  }
+
+  .detail {
+    display: flex;
+    align-items: start;
+    position: relative;
+
+    &--desc {
+      h1 {
+        font-size: 25px;
+
+      }
+
+      margin-left: 10%;
+
+      &__square {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        padding: 6px;
+        background-color: #092828;
+
+        &--block {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          border: #367762;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__percent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    &--images {
+      -webkit-box-shadow: 7px -3px 18px 8px rgba(26, 93, 35, 0.74);
+      -moz-box-shadow: 7px -3px 18px 8px rgba(44, 15, 147, 0.87);
+      box-shadow: 7px -3px 18px 8px rgba(13, 70, 64, 0.38);
+      position: relative;
+      cursor: pointer;
+
+      &:hover:before {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.7rem;
+        position: absolute;
+        content: "⨉  Расширить";
+        color: white;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(6px);
+        background: rgba(196, 287, 187, .096);
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+#actors {
+  padding: 8% 0;
+}
+
+#videos {
+  padding: 10% 0;
+
+}
+
+#actor {
+  padding: 40px 0;
+
+  .actor-detail {
+    display: flex;
+    align-items: start;
+
+    img {
+      width: 300px;
+    }
+
+    &__titles {
+      padding-left: 8%;
+
+      .view-more {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.pagination-btn {
+  button {
+    background: rgb(253, 204, 4);
+    margin: 0 10px;
+    color: white;
+    padding: 7px 17px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+.blur-modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  width: 40%;
+  left: 30%;
+  top: 16.5%;
+  transition: .2s;
+  &-items{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: black;
+    padding:2px 10px;
+    cursor: pointer;
+    &_close{
+      text-align: end;
+      width: 100%;
+      font-size: 2rem;
+
+    }
+    &_title{
+      padding: 0 20px;
+
+    }
+  }
+}
+
+.loader{
+  text-align: center;
+}
